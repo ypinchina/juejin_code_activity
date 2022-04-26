@@ -1,0 +1,382 @@
+<html>
+  <head>
+    <style>
+body {
+  background-color: #238315;
+}
+body h1 {
+  text-align: center;
+  color: #ec7231;
+}
+
+.football-pitch {
+  position: relative;
+  width: 1000px;
+  height: 500px;
+  margin: 40px auto;
+  border: 4px solid #e1e1e1;
+  overflow: hidden ;
+  background: #57b749;
+}
+
+.football-pitch .line{
+    opacity: 0;
+    -ms-transition:opacity 1.2s ease-in-out;
+    -o-transition:opacity 1.2s ease-in-out;
+    -webkit-transition:opacity 1.2s ease-in-out;
+    -moz-transition:opacity 1.2s ease-in-out;
+    transition:opacity 1.2s ease-in-out;
+}
+
+.football-pitch.ready .line{
+    opacity: 1;
+
+}
+.football-pitch .line .halfway-line {
+  position: absolute;
+  top: 0;
+  left: 498px;
+  width: 4px;
+  height: 500px;
+  background-color: #e1e1e1;
+}
+.football-pitch .line .center-circle {
+  position: absolute;
+  top: 196px;
+  left: 446px;
+  width: 100px;
+  height: 100px;
+  border: 4px solid #e1e1e1;
+  -ms-border-radius: 100%;
+  -o-border-radius: 100%;
+  -webkit-border-radius: 100%;
+  -moz-border-radius: 100%;
+  border-radius: 100%;
+}
+.football-pitch .line .center-spot {
+  position: absolute;
+  top: 245px;
+  left: 495px;
+  width: 10px;
+  height: 10px;
+  background-color: #fff;
+  -ms-border-radius: 100%;
+  -o-border-radius: 100%;
+  -webkit-border-radius: 100%;
+  -moz-border-radius: 100%;
+  border-radius: 100%;
+}
+.football-pitch .line .penalty-area-container-left {
+  position: absolute;
+  width: 25px;
+  height: 100px;
+  top: 196px;
+  left: 141px;
+  overflow: hidden;
+}
+.football-pitch .line .penalty-area-container-left .penalty-arc {
+  width: 100px;
+  height: 100px;
+  border: 4px solid #e1e1e1;
+  -ms-border-radius: 100%;
+  -o-border-radius: 100%;
+  -webkit-border-radius: 100%;
+  -moz-border-radius: 100%;
+  border-radius: 100%;
+  float: right;
+}
+.football-pitch .line .penalty-area-left {
+  position: absolute;
+  left: -4px;
+  top: 96px;
+  width: 140px;
+  height: 300px;
+  border: 4px solid #e1e1e1;
+}
+.football-pitch .line .penalty-spot-left {
+  position: absolute;
+  left: 91px;
+  top: 246px;
+  width: 10px;
+  height: 10px;
+  background-color: #fff;
+  -ms-border-radius: 100%;
+  -o-border-radius: 100%;
+  -webkit-border-radius: 100%;
+  -moz-border-radius: 100%;
+  border-radius: 100%;
+}
+.football-pitch .line .goal-area-left {
+  position: absolute;
+  left: -4px;
+  top: 196px;
+  width: 60px;
+  height: 100px;
+  border: 4px solid #e1e1e1;
+}
+.football-pitch .line .corner-area-left-top {
+  position: absolute;
+  left: -15px;
+  top: -15px;
+  width: 30px;
+  height: 30px;
+  border: 4px solid #e1e1e1;
+  -ms-border-radius: 100%;
+  -o-border-radius: 100%;
+  -webkit-border-radius: 100%;
+  -moz-border-radius: 100%;
+  border-radius: 100%;
+}
+.football-pitch .line .corner-area-left-bottom {
+  position: absolute;
+  left: -15px;
+  bottom: -15px;
+  width: 30px;
+  height: 30px;
+  border: 4px solid #e1e1e1;
+  -ms-border-radius: 100%;
+  -o-border-radius: 100%;
+  -webkit-border-radius: 100%;
+  -moz-border-radius: 100%;
+  border-radius: 100%;
+}
+.football-pitch .line .penalty-area-container-right {
+  position: absolute;
+  width: 25px;
+  height: 100px;
+  top: 196px;
+  right: 141px;
+  overflow: hidden;
+}
+.football-pitch .line .penalty-area-container-right .penalty-arc {
+  width: 100px;
+  height: 100px;
+  border: 4px solid #e1e1e1;
+  -ms-border-radius: 100%;
+  -o-border-radius: 100%;
+  -webkit-border-radius: 100%;
+  -moz-border-radius: 100%;
+  border-radius: 100%;
+  float: left;
+}
+.football-pitch .line .penalty-area-right {
+  position: absolute;
+  right: -4px;
+  top: 96px;
+  width: 140px;
+  height: 300px;
+  border: 4px solid #e1e1e1;
+}
+.football-pitch .line .penalty-spot-right {
+  position: absolute;
+  right: 91px;
+  top: 246px;
+  width: 10px;
+  height: 10px;
+  background-color: #fff;
+  -ms-border-radius: 100%;
+  -o-border-radius: 100%;
+  -webkit-border-radius: 100%;
+  -moz-border-radius: 100%;
+  border-radius: 100%;
+}
+.football-pitch .line .goal-area-right {
+  position: absolute;
+  right: -4px;
+  top: 196px;
+  width: 60px;
+  height: 100px;
+  border: 4px solid #e1e1e1;
+}
+.football-pitch .line .corner-area-right-top {
+  position: absolute;
+  right: -15px;
+  top: -15px;
+  width: 30px;
+  height: 30px;
+  border: 4px solid #e1e1e1;
+  -ms-border-radius: 100%;
+  -o-border-radius: 100%;
+  -webkit-border-radius: 100%;
+  -moz-border-radius: 100%;
+  border-radius: 100%;
+}
+.football-pitch .line .corner-area-right-bottom {
+  position: absolute;
+  right: -15px;
+  bottom: -15px;
+  width: 30px;
+  height: 30px;
+  border: 4px solid #e1e1e1;
+  -ms-border-radius: 100%;
+  -o-border-radius: 100%;
+  -webkit-border-radius: 100%;
+  -moz-border-radius: 100%;
+  border-radius: 100%;
+}
+.schedules div{
+    position: absolute;
+    text-align: center;
+    color: #fff;
+    font-size: 14px;
+    font-weight: bold;
+    -ms-border-radius:8px;
+    -o-border-radius:8px;
+    -webkit-border-radius:8px;
+    -moz-border-radius:8px;
+    border-radius:8px;
+    top:600px;
+    -ms-transition:top 1.2s ease-in-out;
+    -o-transition:top 1.2s ease-in-out;
+    -webkit-transition:top 1.2s ease-in-out;
+    -moz-transition:top 1.2s ease-in-out;
+    transition:top 1.2s ease-in-out;
+
+}
+
+.football-pitch.ready .schedules  .match-vs16{
+    width: 120px;
+    height: 30px;
+    line-height: 30px;
+    background-color: #deb71d;
+}
+.football-pitch.ready .schedules .match-vs8{
+    width: 140px;
+    height: 40px;
+    line-height: 40px;
+    background-color: #e19520;
+}
+.football-pitch.ready .schedules .match-vs4{
+    width: 130px;
+    height: 40px;
+    line-height: 40px;
+    background-color: #d67e2b;
+}
+.football-pitch.ready .schedules .match-vs2{
+    width: 140px;
+    height: 50px;
+    line-height: 50px;
+    background-color: #b54035;
+}
+.football-pitch.ready .schedules .match-49 {
+    left: 20px;
+    top: 40px;
+}
+.football-pitch.ready .schedules .match-50 {
+    left: 20px;
+    top: 140px;
+}
+.football-pitch.ready .schedules .match-53 {
+    left: 20px;
+    top: 300px;
+}
+.football-pitch.ready .schedules .match-54 {
+    left: 20px;
+    top: 400px;
+}
+.football-pitch.ready .schedules .match-51 {
+    right: 20px;
+    top: 40px;
+}
+.football-pitch.ready .schedules .match-52 {
+    right: 20px;
+    top: 140px;
+}
+.football-pitch.ready .schedules .match-55 {
+    right: 20px;
+    top: 300px;
+}
+.football-pitch.ready .schedules .match-56 {
+    right: 20px;
+    top: 400px;
+}
+.football-pitch.ready .schedules .match-57 {
+    left: 180px;
+    top: 80px;
+}
+.football-pitch.ready .schedules .match-58 {
+    left: 180px;
+    top: 340px;
+}
+.football-pitch.ready .schedules .match-59 {
+    right: 180px;
+    top: 80px;
+}
+.football-pitch.ready .schedules .match-60 {
+    right: 180px;
+    top: 340px;
+}
+.football-pitch.ready .schedules .match-61 {
+    left: 280px;
+    top: 225px;
+}
+.football-pitch.ready .schedules .match-62 {
+    right: 280px;
+    top: 225px;
+}
+.football-pitch.ready .schedules .match-63 {
+    left: 440px;
+    top: 280px;
+}
+.football-pitch.ready .schedules .match-64 {
+    left: 440px;
+    top: 160px;
+
+}
+
+
+
+
+    </style>
+  </head>
+  <body>
+    <h1>世界杯对阵表</h1>
+<div class="football-pitch" id="football_pitch">
+    <!--由球场界限和球员名字组成-->
+    <div class="line">
+        <div class="halfway-line"></div>
+        <div class="center-circle"></div>
+        <div class="center-spot"></div>
+
+
+        <!--禁区弧--><!--左半场-->
+        <div class="penalty-area-container-left">
+            <div class="penalty-arc"></div>
+        </div>
+        <div class="penalty-area-left"></div>
+        <div class="penalty-spot-left"></div>
+        <div class="goal-area-left"></div>
+        <div class="corner-area-left-top"></div>
+        <div class="corner-area-left-bottom"></div>
+
+        <div class="penalty-area-container-right">
+            <div class="penalty-arc"></div>
+        </div>
+        <div class="penalty-area-right"></div>
+        <div class="penalty-spot-right"></div>
+        <div class="goal-area-right"></div>
+        <div class="corner-area-right-top"></div>
+        <div class="corner-area-right-bottom"></div>
+    </div>
+
+    <div class="schedules">
+        <div class="match-vs16 match-49">荷兰 - 威尔士</div>
+        <div class="match-vs16 match-50">阿根廷 - 丹麦</div>
+        <div class="match-vs16 match-51">英格兰 - 卡塔尔</div>
+        <div class="match-vs16 match-52">法国 - 波兰</div>
+        <div class="match-vs16 match-53">西班牙 - 克罗地亚</div>
+        <div class="match-vs16 match-54">瑞士 - 乌拉圭</div>
+        <div class="match-vs16 match-55">比利时 - 德国</div>
+        <div class="match-vs16 match-56">葡萄牙 - 巴西</div>
+        <div class="match-vs8 match-57">荷兰 - 丹麦</div>
+        <div class="match-vs8 match-58">西班牙 - 瑞士</div>
+        <div class="match-vs8 match-59">英格兰 - 法国</div>
+        <div class="match-vs8 match-60">德国 - 葡萄牙</div>
+        <div class="match-vs4 match-61">西班牙 - 荷兰</div>
+        <div class="match-vs4 match-62">英格兰 - 葡萄牙</div>
+        <div class="match-vs2 match-63">西班牙</div>
+        <div class="match-vs2 match-64">葡萄牙</div>
+    </div>
+</div>
+  </body>
+</html>
