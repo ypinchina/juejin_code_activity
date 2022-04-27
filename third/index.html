@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      #cup_body {
+        width: 300px;
+        height: 250px;
+        border-radius: 0 0 90px 90px;
+        top: 50%;
+        position: absolute;
+        left: 50%;
+        z-index: 1;
+        margin-top: -100px;
+        margin-left: -150px;
+        background-color: #fff;
+        box-shadow: #ffffff 0 0 10px inset, #cfcfcf 5px 5px 20px,
+          #e0e0e0 0 0 40px;
+        background-image: radial-gradient(
+          farthest-corner circle at 60% 50%,
+          #ffffff 10%,
+          #dfdfdf 75%,
+          #eeeeee 90%
+        );
+      }
+
+      #cup_header {
+        width: 300px;
+        height: 55px;
+        border-radius: 50%;
+        top: 50%;
+        position: absolute;
+        left: 50%;
+        z-index: 2;
+        border: 1px solid #eeeeee;
+        margin-left: -150px;
+        margin-top: -125px;
+        box-shadow: #ffffff 0 0 10px inset, #cfcfcf 5px 5px 20px,
+          #e0e0e0 0 0 40px;
+        background-image: radial-gradient(
+          farthest-corner ellipse at 40% 40%,
+          #28659b 58%,
+          #dfdfdf 70%,
+          #eeeeee 80%
+        );
+      }
+
+      #cup_footer {
+        width: 350px;
+        height: 90px;
+        border-radius: 50%;
+        top: 50%;
+        position: absolute;
+        left: 50%;
+        margin-left: -175px;
+        margin-top: 40px;
+        background-color: #fff;
+        border: 1px solid #d8d8d8;
+        background-image: radial-gradient(#979797 30%, #d3d3d3 45%, white 65%);
+        box-shadow: #e4e4e4 0 0 40px inset, #cdcdcd 0 15px 25px,
+          #e0e0e0 0 0 40px;
+      }
+
+      #cup_ear {
+        width: 100px;
+        height: 160px;
+        border-radius: 0 50% 50% 0%;
+        top: 50%;
+        border: 1px solid #eee;
+        position: absolute;
+        left: 50%;
+        margin-left: 125px;
+        margin-top: -75px;
+        background-image: radial-gradient(
+          #fff 25%,
+          #e0e0e0 35%,
+          #eee 45%,
+          #fff 57%
+        );
+        box-shadow: #e4e4e4 0 0 5px inset, #dfdfdf 5px 10px 20px,
+          #e0e0e0 0 0 40px;
+      }
+
+      .click {
+        width: 60px;
+        height: 60px;
+        background-color: transparent;
+        div {
+          background-color: #6cbbac;
+        }
+
+        .one {
+          width: 60%;
+          height: 10px;
+        }
+        .two {
+          width: 80%;
+          height: 10px;
+        }
+        .three {
+          width: 100%;
+          height: 10px;
+        }
+      }
+      .yoyo {
+        width: 60px;
+        height: 60px;
+        background-color: transparent;
+        div {
+          background-color: #2e7fd6;
+        }
+
+        .one {
+          width: 60%;
+          height: 10px;
+        }
+        .two {
+          width: 80%;
+          height: 10px;
+        }
+        .three {
+          width: 100%;
+          height: 10px;
+        }
+      }
+      .HAWK-ING {
+        width: 60px;
+        height: 60px;
+        background-color: transparent;
+        div {
+          background-color: #f87a1d;
+        }
+
+        .one {
+          width: 60%;
+          height: 10px;
+        }
+        .two {
+          width: 80%;
+          height: 10px;
+        }
+        .three {
+          width: 100%;
+          height: 10px;
+        }
+      }
+      .container {
+        display: flex;
+        margin-top: 76px;
+        justify-content: center;
+        align-items: center;
+        div {
+          margin: 0 10px;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+        }
+      }
+      .name-container {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        div {
+          text-align: center;
+          margin: 6px 10px 0 10px;
+          font-size: 12px;
+          width: 66px;
+          color: #2e81ce;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div id="cup_header"></div>
+    <div id="cup_body">
+      <div class="container">
+        <div class="click">
+          <div class="one"></div>
+          <div class="two"></div>
+          <div class="three"></div>
+          <div class="three"></div>
+          <div class="two"></div>
+          <div class="one"></div>
+        </div>
+        <div class="yoyo">
+          <div class="one"></div>
+          <div class="two"></div>
+          <div class="three"></div>
+          <div class="three"></div>
+          <div class="two"></div>
+          <div class="one"></div>
+        </div>
+        <div class="HAWK-ING">
+          <div class="one"></div>
+          <div class="two"></div>
+          <div class="three"></div>
+          <div class="three"></div>
+          <div class="two"></div>
+          <div class="one"></div>
+        </div>
+      </div>
+      <div class="name-container">
+        <div>CLICK</div>
+        <div>YOYO</div>
+        <div>HAWK ING</div>
+      </div>
+    </div>
+    <div id="cup_ear"></div>
+  </body>
+</html>
